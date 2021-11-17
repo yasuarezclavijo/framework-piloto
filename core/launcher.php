@@ -15,7 +15,6 @@ class Launcher {
             require_once $filename_controller;
             $className = ucfirst($name_controller) . "Controller";
             $controller = new $className;
-            
             if (is_callable([$controller, $name_function])) {
                 call_user_func([$controller, $name_function]);
             } else {

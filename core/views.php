@@ -7,7 +7,7 @@ class Views {
     private $route_views = 'application/views/';
     private $route_pages;
     public function __construct($name_template) {
-        $this->template = $name_template;    
+        $this->template = $name_template;
         $this->route_pages  = $this->route_views . 'pages/';
     }
 

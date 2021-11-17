@@ -4,6 +4,15 @@
             <h1><?php echo $title; ?></h1>
         </div>
     </div>
+    <?php if (isset($message_to_show)) { ?>
+    <dvi class="row">
+        <div class="col-8 offset-2">
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong><?php echo $message_to_show ?></strong>
+            </div>
+        </div>
+    </div>
+    <?php } ?>
     <div class="row">
         <div class="col-10 offset-1">
             <table class="table table-dark">
@@ -21,8 +30,8 @@
                         <td><?php echo $film['title'] ?></td>
                         <td><?php echo $film['description'] ?></td>
                         <td><?php echo $film['rating'] ?></td>
-                        <td><a href="#">Editar</a></td>
-                        <td><a href="#">Eliminar</a></td>
+                        <td><a href="<?php echo $absolute_domain ?>/film/delete?pk=<?php echo $film['film_id'] ?>">Editar</a></td>
+                        <td><a href="<?php echo $absolute_domain ?>/film/delete?pk=<?php echo $film['film_id'] ?>" class="delete_link">Eliminar</a></td>
                     </tr>
                 <?php } ?>
                 </tbody>
